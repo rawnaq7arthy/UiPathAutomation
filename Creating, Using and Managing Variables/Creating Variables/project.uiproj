@@ -1,0 +1,6 @@
+{
+  "Name": "Creating Variables_Windows",
+  "ProjectType": "Process",
+  "Description": "To create a workflow that asks for input from the user and saves the answer to a string variable, then assigns a value to another string variable and logs a message with the two values. ",
+  "MainFile": "Main.xaml"
+}
