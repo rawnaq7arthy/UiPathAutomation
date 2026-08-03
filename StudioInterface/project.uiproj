@@ -1,0 +1,6 @@
+{
+  "Name": "StudioInterface",
+  "ProjectType": "Process",
+  "Description": "Process to explore the Studio interface.",
+  "MainFile": "Main.xaml"
+}
