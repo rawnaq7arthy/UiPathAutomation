@@ -1,0 +1,1 @@
+((Year Mod 4 = 0) And Year Mod 100 <> 0) Or (Year Mod 400 = 0)
