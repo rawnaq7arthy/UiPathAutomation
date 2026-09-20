@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>UiPath Customer Registration Practice</title>
+<style>
+body {font-family: Arial, sans-serif; background:#f4f7fb; margin:0; padding:40px;}
+.card {max-width:650px; margin:auto; background:white; padding:28px; border-radius:10px; box-shadow:0 2px 12px rgba(0,0,0,.12);}
+h1 {color:#1F4E78; margin-top:0;}
+label {display:block; margin-top:14px; font-weight:bold;}
+input, select {width:100%; padding:10px; margin-top:6px; box-sizing:border-box; border:1px solid #b8c2cc; border-radius:5px;}
+button {margin-top:20px; padding:11px 18px; border:0; border-radius:5px; background:#1F4E78; color:white; font-weight:bold; cursor:pointer;}
+#clearBtn {background:#6c757d; margin-left:8px;}
+#result {margin-top:22px; padding:14px; background:#eaf4ea; border:1px solid #8fc28f; display:none; font-weight:bold;}
+.small {color:#666; font-size:13px;}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>Customer Registration</h1>
+<p class="small">Local training page for UiPath UI automation.</p>
+<label>Customer ID</label>
+<input id="customerId" name="customerId" type="text">
+<label>Customer Name</label>
+<input id="customerName" name="customerName" type="text">
+<label>Account Number</label>
+<input id="accountNumber" name="accountNumber" type="text">
+<label>Department</label>
+<select id="department" name="department">
+<option value="">-- Select --</option>
+<option>Retail</option>
+<option>Corporate</option>
+<option>Operations</option>
+<option>IT</option>
+</select>
+<button id="submitBtn" onclick="submitForm()">Submit</button>
+<button id="clearBtn" onclick="clearForm()">Clear</button>
+<div id="result"></div>
+</div>
+<script>
+function submitForm(){
+  const id=document.getElementById('customerId').value.trim();
+  const name=document.getElementById('customerName').value.trim();
+  const acct=document.getElementById('accountNumber').value.trim();
+  const dept=document.getElementById('department').value.trim();
+  const box=document.getElementById('result');
+  if(!id || !name || !acct || !dept){
+    box.style.display='block';
+    box.style.background='#fdeaea';
+    box.style.borderColor='#d88';
+    box.innerText='ERROR | Missing required field';
+    return;
+  }
+  box.style.display='block';
+  box.style.background='#eaf4ea';
+  box.style.borderColor='#8fc28f';
+  box.innerText='SUCCESS | ' + id + ' | ' + name + ' | ' + acct;
+}
+function clearForm(){
+  document.getElementById('customerId').value='';
+  document.getElementById('customerName').value='';
+  document.getElementById('accountNumber').value='';
+  document.getElementById('department').value='';
+  document.getElementById('result').style.display='none';
+}
+</script>
+</body>
+</html>
